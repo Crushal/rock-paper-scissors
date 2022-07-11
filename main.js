@@ -1,13 +1,54 @@
-function computer_play() {
-    game = ["Rock", "Paper", "Scissors"]
-    return game[Math.floor(Math.random() * game.length)]
+function computerPlay() {
+    let choice = ["rock", "paper", "scissors"]
+    return choice[Math.floor(Math.random() * choice.length)]
+}
+function singleRound(playerSelection, computerSelection) {
+    if (playerSelection.toLowerCase() === computerSelection) {
+        return "Draw!"
+    }
+    else if (playerSelection.toLowerCase() === "rock") {
+        if (computerSelection === "scissors") {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    else if (playerSelection.toLowerCase() === "paper"){
+        if (computerSelection === "rock") {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    else if (playerSelection.toLowerCase() === "scissors") {
+        if (computerSelection === "paper") {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
-function play_round(player_selection, computer_selection) {
-    if(player_selection.toLowerCase() === "rock" && computer_selection.toLowerCase() === "scissors" ||
-    player_selection.toLowerCase() === "paper" && computer_selection.toLowerCase() === "rock" ||
-    player_selection.toLowerCase() === "scissors" && computer_selection.toLowerCase() === "paper") {
-        return `You Won! ${player_selection} beats ${computer_selection}`
+function game() {
+    let playerScore = 0
+    let computerScore = 0
+    for (let i = 0; i < 5; i++){
+        let computer = computerPlay()
+        let player = prompt("Rock, Paper or Scissors:")
+        let oneRound = singleRound(player, computer)
+        console.log(player)
+        console.log(computer)
+        console.log(oneRound)
+        if (oneRound === true) {
+            playerScore++
+        }
+        else if (oneRound === false) {
+            computerScore++
+        }
     }
-    return `You Lost! ${computer_selection} beats ${player_selection}`
+    return [playerScore, computerScore]
 }
+console.log(game())
