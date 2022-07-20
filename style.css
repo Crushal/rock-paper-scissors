@@ -1,0 +1,47 @@
+body {
+    background-color:  #1a1a1a;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.scoreBoard {
+    color: white;
+    text-align: center;
+}
+
+.decider {
+    color: gold;
+    padding: 20px;
+}
+
+.display {
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: grey;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width : 100px;
+    border-radius: 20px;
+    background-color: royalblue;
+    border: none;
+    font-weight: bolder;
+}
+
+button:hover {
+    transform: scale(1.5);
+}
+
+button:active {
+    background-color: white;
+}
